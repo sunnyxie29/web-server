@@ -71,6 +71,18 @@ app.use((req, res) => {
     res.status(404).send('Page not found');
 });
 
+book=[];
+
+app.post('/book', (req, res) => {
+  const { title, body } = req.body;
+  if (!title || !body) {
+    return res.status(400).send('Title and body are required');
+  }
+  book.push({ title, body });
+  res.status(201).send('Booking created');
+});
+
+
 app.listen(PORT, () => {
     console.log(`Listening on http://localhost:${PORT}`);
 });
