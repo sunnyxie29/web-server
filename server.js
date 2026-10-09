@@ -53,7 +53,7 @@ const events = [
 // });
 
 
-
+//trying to make an uncommitted change
 app.get('/', (req, res) => {
     res.render('events', { events });
 });
